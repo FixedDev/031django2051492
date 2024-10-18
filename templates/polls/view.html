@@ -1,0 +1,21 @@
+<h2>{{ question.question_text }}</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Opcion</th>
+        <th>Votos</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for choice in question.choice_set.all %}
+            <tr>
+                <td>
+                    {{ choice }}
+                </td>
+                <td>
+                    {{ choice.votes }}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

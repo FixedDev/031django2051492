@@ -1,0 +1,21 @@
+<form method="POST">
+    <label for="question_text">Texto de la pregunta</label>
+    <br>
+    <input type="text" name="question_text" id="question_text" min="1" required>
+    <br>
+    <label for="pub_date">Fecha de publicacion:</label>
+    <br>
+    <input type="date" id="pub_date" name="pub_date" required>
+
+    <h3>Opciones</h3>
+    {% for i in "123" %}
+        <div>
+            <label for="choice_text_{{ forloop.counter }}">Opción {{ forloop.counter }}:</label>
+            <input type="text" name="choice_text" id="choice_text_{{ forloop.counter }}">
+        </div>
+    {% endfor %}
+
+    <input type="submit">
+    {% csrf_token %}
+</form>
+

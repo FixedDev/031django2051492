@@ -1,0 +1,30 @@
+<table>
+    <thead>
+    <tr>
+        <th>Pregunta</th>
+        <th>Fecha de publicacion</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% if questions %}
+        {% for question in questions %}
+            <tr>
+                <td>
+                    <a href="/polls/{{ question.id }}">{{ question }}</a>
+                </td>
+                <td>
+                    {{ question.pub_date }}
+                </td>
+            </tr>
+        {% endfor %}
+
+    {% else %}
+        <tr>
+            <td>
+                No hay preguntas:(
+            </td>
+        </tr>
+    {% endif %}
+
+    </tbody>
+</table>
